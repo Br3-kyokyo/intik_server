@@ -40,7 +40,7 @@ DeviseTokenAuth.setup do |config|
   # By default we will use callbacks for single omniauth.
   # It depends on fields like email, provider and uid.
   # config.default_callbacks = true
-  config.default_callbacks = false
+  # config.default_callbacks = false
 
   # Makes it possible to change the headers names
   # config.headers_names = {:'access-token' => 'access-token',
@@ -53,4 +53,6 @@ DeviseTokenAuth.setup do |config|
   # If, however, you wish to integrate with legacy Devise authentication, you can
   # do so by enabling this flag. NOTE: This feature is highly experimental!
   # config.enable_standard_devise_support = false
+
+  config.default_confirm_success_url = 'google.com'
 end
