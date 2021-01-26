@@ -4,14 +4,14 @@
 
 |  path  | method | params | purpose  | headers|
 | ---- | ---- | ---- | ---- | ---- |
-|  /users/:uid | GET | | return user profile | |
-|  /users/:uid | PUT | | update user profile | |
-|  /users/:uid/followings | GET | |  | |
+|  /users/:username | GET | | return user profile | |
+|  /users/:username | PUT | | update user profile | |
+|  /users/:username/followings | GET | |  | |
 |  /follows | GET | uid |  | |
 |  /follows | POST | following_uid, follower_uid |  |
-|  /users/:uid/followers | GET | |  | |
+|  /users/:username/followers | GET | |  | |
 |  /followers | GET | uid |  | |
-|  /users/:uid/likes | GET | |  | |
+|  /users/:username/likes | GET | |  | |
 |  /likes | GET | uid |  | |
 |  /likes | POST | uid, post_id |  | |
 |  /users/:uid/posts | GET | |  | |
