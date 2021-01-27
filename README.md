@@ -7,17 +7,15 @@
 |  /users/:username | GET | | return user profile | |
 |  /users/:username | PUT | | update user profile | |
 |  /users/:username/followings | GET | |  | |
-|  /follows | GET | uid |  | |
-|  /follows | POST | following_uid, follower_uid |  |
+|  /follows/:username | GET |  |  | |
+|  /follows/ | POST | following_username, follower_username |  |
 |  /users/:username/followers | GET | |  | |
-|  /followers | GET | uid |  | |
-|  /users/:username/likes | GET | |  | |
-|  /likes | GET | uid |  | |
-|  /likes | POST | uid, post_id |  | |
-|  /users/:uid/posts | GET | |  | |
+|  /followers/:username | GET |  |  | |
+|  /users/:username/posts | GET | |  | |
 |  /posts | GET | |  | |
-|  /posts | POST | uid |  | |
-|  /search | GET | query | return posts list | |
+|  /posts | POST | username |  | |
+|  /posts/read_users | GET | |  | |
+|  /search?q=hoge&fuga&... | GET |  | return posts list | |
 | -- 以下認証関連 -- |
 |  /auth  | POST | email, password, password_confirmation, confirm_success_url | アカウント登録。|
 |  /auth  | DELETE  |  |   アカウント削除。  |uid, access-token, client|
