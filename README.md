@@ -4,18 +4,22 @@
 
 |  path  | method | params | purpose  | headers|
 | ---- | ---- | ---- | ---- | ---- |
-|  /users/:username | GET | | return user profile | |
-|  /users/:username | PUT | | update user profile | |
-|  /users/:username/followings | GET | |  | |
-|  /follows/:username | GET |  |  | |
-|  /follows/ | POST | following_username, follower_username |  |
-|  /users/:username/followers | GET | |  | |
-|  /followers/:username | GET |  |  | |
-|  /users/:username/posts | GET | |  | |
-|  /posts | GET | |  | |
-|  /posts | POST | username |  | |
-|  /posts/read_users | GET | |  | |
+|  users | resources | |  | |
+|  posts | resources | |  | |
+|  /settings/username | PUT | |  | |
+|  /settings/email | PUT | |  | |
+|  /settings/image | PUT | |  | |
+|  /settings/profiles | PUT | |  | |
+|  /:username | GET | |  | |
+|  /:username/followings | GET | |  | |
+|  /:username/followers | GET | |  | |
+|  /:username/posts | GET | |  | |
+|  /posts/:id | GET | |  | |
+|  /posts/:id/read_users | GET | |  | |
 |  /search?q=hoge&fuga&... | GET |  | return posts list | |
+|  /posts | POST | username, body |  | |
+|  /posts | PUT | post_id, body |  | |
+|  /follow | POST | follow_username |  |
 | -- 以下認証関連 -- |
 |  /auth  | POST | email, password, password_confirmation, confirm_success_url | アカウント登録。|
 |  /auth  | DELETE  |  |   アカウント削除。  |uid, access-token, client|
