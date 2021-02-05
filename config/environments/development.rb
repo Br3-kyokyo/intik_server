@@ -64,9 +64,9 @@ Rails.application.configure do
     allow do
       origins 'localhost:3000', 'localhost:'
       resource '*',
-        headers: :any,
-        expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-        methods: [:get, :post, :options, :delete, :put]
+               headers: :any,
+               expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+               methods: [:get, :post, :options, :delete, :put]
     end
   end
 end

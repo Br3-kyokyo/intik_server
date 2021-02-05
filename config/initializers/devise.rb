@@ -49,7 +49,6 @@ Devise.setup do |config|
   # config.authentication_keys = [:email]
   # config.authentication_keys = [:email, :uid]
 
-
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,

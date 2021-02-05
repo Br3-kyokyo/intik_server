@@ -7,7 +7,5 @@ describe '/posts', type: :request do
   end
 
   it 'ポスト検索' do
-    
   end
 end
-

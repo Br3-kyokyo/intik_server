@@ -10,7 +10,6 @@ RSpec.describe FollowsController, type: :routing do
       expect(get: "/follows/1").to route_to("follows#show", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/follows").to route_to("follows#create")
     end
