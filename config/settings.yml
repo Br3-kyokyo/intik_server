@@ -1,0 +1,4 @@
+session:
+  timeout: 7200
+redis:
+  url: "redis://localhost:6379"

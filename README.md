@@ -4,6 +4,7 @@
 
 |  path  | method | params | purpose  | headers|
 | ---- | ---- | ---- | ---- | ---- |
+
 |  users | resources | |  | |
 |  posts | resources | |  | |
 |  /settings/username | PUT | |  | |
@@ -14,11 +15,8 @@
 |  /:username/followings | GET | |  | |
 |  /:username/followers | GET | |  | |
 |  /:username/posts | GET | |  | |
-|  /posts/:id | GET | |  | |
 |  /posts/:id/read_users | GET | |  | |
 |  /search?q=hoge&fuga&... | GET |  | return posts list | |
-|  /posts | POST | username, body |  | |
-|  /posts | PUT | post_id, body |  | |
 |  /follow | POST | follow_username |  |
 | -- 以下認証関連 -- |
 |  /auth  | POST | email, password, password_confirmation, confirm_success_url | アカウント登録。|

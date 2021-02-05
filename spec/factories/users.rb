@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :admin, class: User do
     name { '管理者' }
-    username { 'admin' }
+    uid { 'admin' }
     biography { '私は管理者です。' }
     admin { true }
     email { 'admin@example.com' }
@@ -10,7 +10,7 @@ FactoryBot.define do
 
   factory :member, class: User do
     name { 'メンバー' }
-    username { 'member' }
+    uid { 'member' }
     biography { '私はメンバーです。' }
     admin { false }
     email { 'member@example.com' }
