@@ -2,53 +2,49 @@
 
 ## API reference
 
-|  path  | method | params | purpose  | headers|
+<!-- |  path  | method | params | purpose  | headers|
 | ---- | ---- | ---- | ---- | ---- |
-
-|  users | resources | |  | |
+|  users | resources(uid) | |  | |
 |  posts | resources | |  | |
-|  /settings/username | PUT | |  | |
-|  /settings/email | PUT | |  | |
-|  /settings/image | PUT | |  | |
-|  /settings/profiles | PUT | |  | |
-|  /:username | GET | |  | |
-|  /:username/followings | GET | |  | |
-|  /:username/followers | GET | |  | |
-|  /:username/posts | GET | |  | |
+|  /:uid | GET | |  | |
+|  /:uid/followings | GET | |  | |
+|  /:uid/followers | GET | |  | |
+|  /:uid/posts | GET | |  | |
 |  /posts/:id/read_users | GET | |  | |
 |  /search?q=hoge&fuga&... | GET |  | return posts list | |
 |  /follow | POST | follow_username |  |
 | -- 以下認証関連 -- |
-|  /auth  | POST | email, password, password_confirmation, confirm_success_url | アカウント登録。|
-|  /auth  | DELETE  |  |   アカウント削除。  |uid, access-token, client|
-|  /auth  | PUT  | password, password_confirmation |    |
-|  /auth/sign_in  | PUT  | email, password |    |
-|  /auth/sign_out  | DELETE  | |   |uid, access-token, client | |
-|  /auth/:provider | GET| | |
-| /auth/:provider/callback | GET/POST | |  
-| /auth/validate_token | GET | | | uid, access-token, client |
-| /auth/password | POST | email, redirect_url | |
-| /auth/password | PUT | password, password_confirmation | |
-| /auth/password/edit | GET | reset_password_token, redirect_url | |
-| /auth/confirmation | POST | email, redirect_url | |
+|  /signin  | POST | uid, password | |
+|  /refresh  | POST | | |
+|  /signout  | POST | | | -->
 
-## 認証ヘッダ
-
-
-
-
-| param | description |
-| ---- | ---- | 
-| access-token | This serves as the user's password for each request. A hashed version of this value is stored in the database for later comparison. This value should be changed on each request. |
-| client | This enables the use of multiple simultaneous sessions on different clients. (For example, a user may want to be authenticated on both their phone and their laptop at the same time.) |
-| expiry | The date at which the current session will expire. This can be used by clients to invalidate expired tokens without the need for an API request. |
-| uid | A unique value that is used to identify the user. This is necessary because searching the DB for users by their access token will make the API susceptible to timing attacks. |
-
-
-
-
-サインアップにメール認証必要なし
-
+                    Prefix Verb   URI Pattern                                    
+            api_v1_signin POST   /api/v1/signin(.:format)                        
+            api_v1_refresh POST   /api/v1/refresh(.:format)                    
+            api_v1_signout DELETE /api/v1/signout(.:format)                      
+          api_v1_user_post GET    /api/v1/users/:user_uid/post(.:format)         
+                          PATCH  /api/v1/users/:user_uid/post(.:format)          
+                          PUT    /api/v1/users/:user_uid/post(.:format)          
+                          DELETE /api/v1/users/:user_uid/post(.:format)          
+                          POST   /api/v1/users/:user_uid/post(.:format)          
+      api_v1_user_follows GET    /api/v1/users/:user_uid/follows(.:format)       
+    api_v1_user_followers GET    /api/v1/users/:user_uid/followers(.:format)     
+                          POST   /api/v1/users/:user_uid/follows(.:format)       
+        api_v1_user_follow DELETE /api/v1/users/:user_uid/follows/:id(.:format)  
+              api_v1_users GET    /api/v1/users(.:format)                        
+                          POST   /api/v1/users(.:format)                         
+              api_v1_user GET    /api/v1/users/:uid(.:format)                    
+                          PATCH  /api/v1/users/:uid(.:format)                    
+                          PUT    /api/v1/users/:uid(.:format)                    
+                          DELETE /api/v1/users/:uid(.:format)                    
+    api_v1_post_read_users GET    /api/v1/posts/:post_id/read_users(.:format)    
+        api_v1_post_search GET    /api/v1/posts/:post_id/search(.:format)        
+              api_v1_posts GET    /api/v1/posts(.:format)                        
+                          POST   /api/v1/posts(.:format)                         
+              api_v1_post GET    /api/v1/posts/:id(.:format)                     
+                          PATCH  /api/v1/posts/:id(.:format)                     
+                          PUT    /api/v1/posts/:id(.:format)                     
+                          DELETE /api/v1/posts/:id(.:format)                     
 
 
 This README would normally document whatever steps are necessary to get the
