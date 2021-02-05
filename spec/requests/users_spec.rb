@@ -9,6 +9,12 @@ describe '/users', type: :request do
       @current_user = FactoryBot.create(:member)
   end
 
+  # it 'サインアップで200を返す' do
+  #   post '/auth',
+  #        params: { email: 'test@example.com', password: 'password', password_confirmation: 'password' }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
+  #   expect(response.status).to eq(200)
+  # end
+
   it 'ユーザ情報取得' do
       get "/users/#{@current_user.username}"
       expect(response.body).to eq(200)

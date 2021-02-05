@@ -14,12 +14,6 @@ describe 'authentication API', type: :request do
     @current_user = FactoryBot.create(:member)
   end
 
-  # it 'サインアップで200を返す' do
-  #   post '/auth',
-  #        params: { email: 'test@example.com', password: 'password', password_confirmation: 'password' }.to_json, headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
-  #   expect(response.status).to eq(200)
-  # end
-
   it 'サインインで201を返す' do
     signin(@current_user.uid, @current_user.password)
     expect(response).to have_http_status(:created)
